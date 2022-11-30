@@ -39,7 +39,7 @@ let posts: Post[] = [
 export async function getPosts(){
    return posts
 }
-export async function modify(data:Partial<Post>, id:number){
+export async function modify(data:Partial<Post>, id:number){//creo un metodo per la modifica dei post da attivati a disattivati
   posts = posts.map(post => post.id == id? {...post, ...data}:post)
   return posts.find(post=>post.id == id) as Post
 }
