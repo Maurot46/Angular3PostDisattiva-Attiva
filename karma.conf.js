@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/angular3-post'),
+      dir: require('path').join(__dirname, './coverage/epicode-esercizi'),
       subdir: '.',
       reporters: [
         { type: 'html' },

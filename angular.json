@@ -1,13 +1,24 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "ee24fbc1-5197-486e-9c75-1a864b7cc47d"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Angular3Post": {
+    "epicode-esercizi": {
       "projectType": "application",
       "schematics": {
+
         "@schematics/angular:component": {
-          "style": "scss"
+          "inlineTemplate": false,
+          "inlineStyle": false,
+          "style": "scss",
+          "skipTests": true,
+          "flat": false
+        },
+        "@schematics/angular:application": {
+          "strict": true
         }
       },
       "root": "",
@@ -17,12 +28,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular3-post",
+            "outputPath": "dist/epicode-esercizi",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -69,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Angular3Post:build:production"
+              "browserTarget": "epicode-esercizi:build:production"
             },
             "development": {
-              "browserTarget": "Angular3Post:build:development"
+              "browserTarget": "epicode-esercizi:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Angular3Post:build"
+            "browserTarget": "epicode-esercizi:build"
           }
         },
         "test": {
@@ -90,7 +100,6 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -103,5 +112,6 @@
         }
       }
     }
-  }
+  },
+  "defaultProject": "epicode-esercizi"
 }
